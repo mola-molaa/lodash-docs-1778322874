@@ -1,0 +1,154 @@
+---
+title: Array Methods
+icon: 📋
+---
+
+<Heading level="1">
+    Array Methods
+</Heading>
+
+<Paragraph>
+    Lodash provides a comprehensive set of methods for working with arrays. These methods handle common operations like iteration, filtering, mapping, and more.
+</Paragraph>
+
+<Heading level="2">
+    Basic Operations
+</Heading>
+
+<Paragraph>
+    <Mark bold>_.chunk</Mark> - Creates an array of elements split into groups of the specified size:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.compact</Mark> - Removes falsey values from an array:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.concat</Mark> - Creates a new array concatenating arrays or values:
+</Paragraph>
+
+<Heading level="2">
+    Iteration Methods
+</Heading>
+
+<Paragraph>
+    <Mark bold>_.each (_.forEach)</Mark> - Iterates over elements of an array:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.map</Mark> - Creates an array of values by running each element through an iteratee:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.filter</Mark> - Iterates over elements and returns an array of all elements the predicate returns truthy for:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.reject</Mark> - The opposite of <Mark>_.filter</Mark>; returns elements the predicate returns falsey for:
+</Paragraph>
+
+<Heading level="2">
+    Search and Find
+</Heading>
+
+<Paragraph>
+    <Mark bold>_.find</Mark> - Iterates over elements and returns the first element that the predicate returns truthy for:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.findIndex</Mark> - This method is like <Mark>_.find</Mark> except that it returns the index of the first element:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.includes</Mark> - Checks if a value is in a collection:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.indexOf</Mark> - Gets the index at which the first occurrence of a value is found:
+</Paragraph>
+
+<Heading level="2">
+    Transformation Methods
+</Heading>
+
+<Paragraph>
+    <Mark bold>_.flatten</Mark> - Flattens a nested array:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.flattenDeep</Mark> - Recursively flattens a nested array:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.reverse</Mark> - Reverses an array:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.slice</Mark> - Creates a slice of an array:
+</Paragraph>
+
+<Heading level="2">
+    Set Operations
+</Heading>
+
+<Paragraph>
+    <Mark bold>_.difference</Mark> - Creates an array of values not included in other arrays:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.intersection</Mark> - Creates an array of unique values that are included in all given arrays:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.union</Mark> - Creates an array of unique values from all given arrays:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.xor</Mark> - Creates an array of values that are not included in the other given arrays:
+</Paragraph>
+
+<Heading level="2">
+    Sorting and Ordering
+</Heading>
+
+<Paragraph>
+    <Mark bold>_.sortBy</Mark> - Creates an array of elements sorted in ascending order by the results of running each element through an iteratee:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.orderBy</Mark> - Similar to <Mark>_.sortBy</Mark> but allows specifying sort orders:
+</Paragraph>
+
+<Heading level="2">
+    Functional Programming with Arrays
+</Heading>
+
+<Paragraph>
+    When using the FP module, array methods are auto-curried and use iteratee-first, data-last argument order:
+</Paragraph>
+
+<Paragraph>
+    This allows for easy function composition and partial application.
+</Paragraph>
+
+<Callout icon="💡" blockColor="yellow" borderColor="light_orange">
+    Array methods in the FP module do not mutate the original array. Instead, they return a new array with the operation applied.
+</Callout>
+
+<Heading level="2">
+    Performance Notes
+</Heading>
+
+<Paragraph>
+    Lodash array methods are optimized for performance. Some methods use short-circuit evaluation and are optimized for large arrays.
+</Paragraph>
+
+<BulletedList>
+    Methods like <Mark>_.find</Mark> and <Mark>_.some</Mark> stop iteration once a truthy value is found
+</BulletedList>
+<BulletedList>
+    <Mark>_.filter</Mark> and <Mark>_.map</Mark> pre-allocate result arrays when possible
+</BulletedList>
+<BulletedList>
+    Large array optimizations are applied for arrays with more than 200 elements
+</BulletedList>
