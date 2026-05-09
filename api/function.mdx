@@ -1,0 +1,176 @@
+---
+title: Function Methods
+icon: ⚙️
+---
+
+<Heading level="1">
+    Function Methods
+</Heading>
+
+<Paragraph>
+    Lodash provides utilities for working with functions, including currying, throttling, debouncing, and composition.
+</Paragraph>
+
+<Heading level="2">
+    Currying and Partial Application
+</Heading>
+
+<Paragraph>
+    <Mark bold>_.curry</Mark> - Creates a function that accepts arguments of <Mark>func</Mark> and either invokes <Mark>func</Mark> returning its result if all <Mark>func</Mark> arguments are provided, or returns a new function that accepts the remaining <Mark>func</Mark> arguments:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.curryRight</Mark> - Similar to <Mark>_.curry</Mark> but arguments are applied from the right:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.partial</Mark> - Creates a function that invokes <Mark>func</Mark> with partial arguments prepended to those provided:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.partialRight</Mark> - Similar to <Mark>_.partial</Mark> but partial arguments are appended:
+</Paragraph>
+
+<Heading level="2">
+    Function Control
+</Heading>
+
+<Paragraph>
+    <Mark bold>_.debounce</Mark> - Creates a debounced function that delays invoking <Mark>func</Mark> until after <Mark>wait</Mark> milliseconds have elapsed since the last time the debounced function was invoked:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.throttle</Mark> - Creates a throttled function that only invokes <Mark>func</Mark> at most once per every <Mark>wait</Mark> milliseconds:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.once</Mark> - Creates a function that is restricted to invoking <Mark>func</Mark> once. Repeat calls return the value of the first invocation:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.after</Mark> - Creates a function that invokes <Mark>func</Mark> after being called <Mark>n</Mark> times:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.before</Mark> - Creates a function that invokes <Mark>func</Mark> no more than <Mark>n</Mark> times:
+</Paragraph>
+
+<Heading level="2">
+    Function Composition
+</Heading>
+
+<Paragraph>
+    <Mark bold>_.flow</Mark> - Creates a function that returns the result of invoking the given functions with the arguments provided:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.flowRight</Mark> - Similar to <Mark>_.flow</Mark> but functions are invoked from right to left:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.over</Mark> - Creates a function that invokes the provided functions with the arguments provided:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.overEvery</Mark> - Creates a function that checks if all predicates return truthy:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.overSome</Mark> - Creates a function that checks if any predicates return truthy:
+</Paragraph>
+
+<Heading level="2">
+    Utility Functions
+</Heading>
+
+<Paragraph>
+    <Mark bold>_.bind</Mark> - Creates a function that invokes <Mark>func</Mark> with the <Mark>this</Mark> binding of <Mark>thisArg</Mark>:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.bindKey</Mark> - Creates a function that invokes the method at object[key] with <Mark>partial</Mark> arguments prepended:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.wrap</Mark> - Creates a function that provides value to <Mark>wrapper</Mark> as its first argument:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.memoize</Mark> - Creates a function that memoizes the result of <Mark>func</Mark>:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.negate</Mark> - Creates a function that negates the result of the predicate <Mark>func</Mark>:
+</Paragraph>
+
+<Heading level="2">
+    FP Module Function Methods
+</Heading>
+
+<Paragraph>
+    In the FP module, function methods are auto-curried and use iteratee-first, data-last argument order:
+</Paragraph>
+
+<BulletedList>
+    <Mark>fp.curry</Mark> - Auto-curried version
+</BulletedList>
+<BulletedList>
+    <Mark>fp.flow</Mark> - Compose functions (left-to-right)
+</BulletedList>
+<BulletedList>
+    <Mark>fp.flowRight</Mark> - Compose functions (right-to-left)
+</BulletedList>
+
+<Paragraph>
+    Example of function composition in FP module:
+</Paragraph>
+
+<Paragraph>
+    You can also use placeholders for partial application:
+</Paragraph>
+
+<Heading level="2">
+    Performance Tips
+</Heading>
+
+<Paragraph>
+    When working with function methods, consider these performance tips:
+</Paragraph>
+
+<BulletedList>
+    Use <Mark>_.debounce</Mark> or <Mark>_.throttle</Mark> for event handlers that fire frequently
+</BulletedList>
+<BulletedList>
+    Prefer <Mark>_.flow</Mark> over nested function calls for better readability
+</BulletedList>
+<BulletedList>
+    Use <Mark>_.memoize</Mark> for expensive computations that are called repeatedly
+</BulletedList>
+<BulletedList>
+    Consider <Mark>_.once</Mark> for initialization logic
+</BulletedList>
+
+<Callout icon="💡" blockColor="yellow" borderColor="light_orange">
+    The FP module's auto-currying feature allows for elegant function composition. Methods like <Mark>fp.flow</Mark> and <Mark>fp.curry</Mark> are particularly useful for creating reusable function pipelines.
+</Callout>
+
+<Heading level="2">
+    Common Patterns
+</Heading>
+
+<Paragraph>
+    Here are some common patterns using Lodash function methods:
+</Paragraph>
+
+<BulletedList>
+    <Mark bold>Event handler throttling:</Mark> <Mark>const throttled = _.throttle(handleScroll, 100)</Mark>
+</BulletedList>
+<BulletedList>
+    <Mark bold>Function composition:</Mark> <Mark>const process = _.flow(trim, toLower, escape)</Mark>
+</BulletedList>
+<BulletedList>
+    <Mark bold>Method binding:</Mark> <Mark>const bound = _.bind(func, thisArg, partialArg)</Mark>
+</BulletedList>
+<BulletedList>
+    <Mark bold>Predicate creation:</Mark> <Mark>const isEven = _.flow(_.modulo(_, 2), _.eq(0))</Mark>
+</BulletedList>
