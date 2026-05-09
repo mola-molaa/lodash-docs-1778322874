@@ -1,0 +1,248 @@
+---
+title: Security Reporting
+icon: 🚨
+---
+
+<Heading level="1">
+    Security Reporting
+</Heading>
+
+<Paragraph>
+    We consider the security of Lodash a top priority. If you discover a security vulnerability, please report it responsibly.
+</Paragraph>
+
+<Heading level="2">
+    How to Report
+</Heading>
+
+<Paragraph>
+    Report security issues directly to the Lodash maintainers through the <Link href="https://github.com/lodash/lodash/security">Security tab</Link> of the Lodash repository.
+</Paragraph>
+
+<Callout icon="✅" blockColor="green" borderColor="green">
+    Please report security issues privately. Do not create public GitHub issues for security vulnerabilities.
+</Callout>
+
+<Heading level="2">
+    Responsible Disclosure Policy
+</Heading>
+
+<Paragraph>
+    A responsible disclosure policy helps protect users of the project from publicly disclosed security vulnerabilities without a fix.
+</Paragraph>
+
+<BulletedList>
+    Report the vulnerability privately to the Security Triage Team
+</BulletedList>
+<BulletedList>
+    Allow time for the vulnerability to be triaged and patched
+</BulletedList>
+<BulletedList>
+    Wait for an upgrade path to be available before public disclosure
+</BulletedList>
+<BulletedList>
+    We will acknowledge receipt of your report within 5 business days
+</BulletedList>
+
+<Heading level="2">
+    Escalation
+</Heading>
+
+<Paragraph>
+    If you do not receive an acknowledgement of your report within <Mark bold>6 business days</Mark>, or if you cannot find a private security contact for the project, you may escalate to the OpenJS Foundation CNA at:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>security@lists.openjsf.org</Mark>
+</Paragraph>
+
+<Paragraph>
+    If the project acknowledges your report but does not provide any further response or engagement within <Mark bold>14 days</Mark>, escalation is also appropriate.
+</Paragraph>
+
+<Heading level="2">
+    Incident Response Process
+</Heading>
+
+<Paragraph>
+    When a security report is received, the following process is followed:
+</Paragraph>
+
+<Table>
+    <TableRow>
+        <TableCell>
+            <Mark bold>Step</Mark>
+        </TableCell>
+        <TableCell>
+            <Mark bold>Action</Mark>
+        </TableCell>
+        <TableCell>
+            <Mark bold>Timeline</Mark>
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            1. Report Received
+        </TableCell>
+        <TableCell>
+            Assign Security Report Coordinator
+        </TableCell>
+        <TableCell>
+            Immediate
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            2. Acknowledge
+        </TableCell>
+        <TableCell>
+            Confirm receipt to reporter
+        </TableCell>
+        <TableCell>
+            Within 5 days
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            3. Triage
+        </TableCell>
+        <TableCell>
+            Assess and validate the report
+        </TableCell>
+        <TableCell>
+            10 days
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            4. Patch (if needed)
+        </TableCell>
+        <TableCell>
+            Develop and test security fix
+        </TableCell>
+        <TableCell>
+            Varies
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            5. Advisory
+        </TableCell>
+        <TableCell>
+            Create advisory and request CVE
+        </TableCell>
+        <TableCell>
+            Before release
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            6. Release
+        </TableCell>
+        <TableCell>
+            Publish security release to npm
+        </TableCell>
+        <TableCell>
+            After patch
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            7. Disclosure
+        </TableCell>
+        <TableCell>
+            Public disclosure via blog/social media
+        </TableCell>
+        <TableCell>
+            After release
+        </TableCell>
+    </TableRow>
+</Table>
+
+<Heading level="2">
+    Roles & Responsibilities
+</Heading>
+
+<Heading level="3">
+    Security Triage Team
+</Heading>
+
+<Paragraph>
+    The Security Triage Team is responsible for assessing and managing vulnerability and incident reports. It is currently handled by the TSC.
+</Paragraph>
+
+<Heading level="3">
+    Reporter
+</Heading>
+
+<Paragraph>
+    Responsibilities:
+</Paragraph>
+
+<BulletedList>
+    Submit security report privately
+</BulletedList>
+<BulletedList>
+    Provide detailed information about the vulnerability
+</BulletedList>
+<BulletedList>
+    Cooperate with the Security Triage Team
+</BulletedList>
+<BulletedList>
+    Test and verify patches (when applicable)
+</BulletedList>
+<BulletedList>
+    Respect security timelines
+</BulletedList>
+
+<Heading level="3">
+    Remediation Developer
+</Heading>
+
+<Paragraph>
+    Responsibilities:
+</Paragraph>
+
+<BulletedList>
+    Develop a patch based on the reported vulnerability
+</BulletedList>
+<BulletedList>
+    Ensure the patch follows best practices
+</BulletedList>
+<BulletedList>
+    Add regression tests to the test suite
+</BulletedList>
+<BulletedList>
+    Create a pull request with the fix
+</BulletedList>
+
+<Heading level="2">
+    What to Include in Your Report
+</Heading>
+
+<Paragraph>
+    To help us triage your report quickly, please include:
+</Paragraph>
+
+<BulletedList>
+    <Mark bold>Affected versions</Mark> of Lodash
+</BulletedList>
+<BulletedList>
+    <Mark bold>Proof of Concept</Mark> - sample code demonstrating the issue
+</BulletedList>
+<BulletedList>
+    <Mark bold>Steps to reproduce</Mark> the vulnerability
+</BulletedList>
+<BulletedList>
+    <Mark bold>Expected vs. actual behavior</Mark>
+</BulletedList>
+<BulletedList>
+    <Mark bold>Potential impact</Mark> assessment
+</BulletedList>
+<BulletedList>
+    <Mark bold>Suggested mitigation</Mark> (if any)
+</BulletedList>
+
+<Callout icon="🚨" blockColor="red" borderColor="red">
+    Thank you for helping keep Lodash and its users safe! Your responsible disclosure efforts are sincerely appreciated.
+</Callout>
