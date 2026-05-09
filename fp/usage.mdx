@@ -1,0 +1,237 @@
+---
+title: FP Module Usage
+icon: 🎯
+---
+
+<Heading level="1">
+    FP Module Usage
+</Heading>
+
+<Paragraph>
+    This guide shows you how to use the Lodash FP module for functional programming patterns, currying, and data transformation pipelines.
+</Paragraph>
+
+<Heading level="2">
+    Getting Started
+</Heading>
+
+<Paragraph>
+    Import the FP module in your project:
+</Paragraph>
+
+<Paragraph>
+    Or import individual FP methods:
+</Paragraph>
+
+<Heading level="2">
+    Basic Currying
+</Heading>
+
+<Paragraph>
+    All FP methods are auto-curried. You can call them with fewer arguments than expected, and they return a new function expecting the remaining arguments:
+</Paragraph>
+
+<Paragraph>
+    This makes it easy to create specialized functions from general ones.
+</Paragraph>
+
+<Heading level="2">
+    Function Composition
+</Heading>
+
+<Paragraph>
+    Use <Mark>fp.flow</Mark> (left-to-right) or <Mark>fp.flowRight</Mark> (right-to-left) to compose functions:
+</Paragraph>
+
+<Paragraph>
+    You can also use Ramda-style aliases <Mark>fp.pipe</Mark> (alias for <Mark>fp.flow</Mark>) and <Mark>fp.compose</Mark> (alias for <Mark>fp.flowRight</Mark>).
+</Paragraph>
+
+<Heading level="2">
+    Using Placeholders
+</Heading>
+
+<Paragraph>
+    The <Mark>fp.__</Mark> placeholder lets you specify arguments in any order:
+</Paragraph>
+
+<Paragraph>
+    This is useful when you want to partially apply arguments in a specific order.
+</Paragraph>
+
+<Heading level="2">
+    Common Patterns
+</Heading>
+
+<Heading level="3">
+    Data Transformation Pipeline
+</Heading>
+
+<Paragraph>
+    Create reusable data transformation pipelines:
+</Paragraph>
+
+<Heading level="3">
+    Predicate Composition
+</Heading>
+
+<Paragraph>
+    Combine predicates with <Mark>fp.overEvery</Mark> (all must pass) or <Mark>fp.overSome</Mark> (any must pass):
+</Paragraph>
+
+<Heading level="3">
+    Object Manipulation
+</Heading>
+
+<Paragraph>
+    Work with objects in a functional way:
+</Paragraph>
+
+<Heading level="2">
+    Iteratee Shorthands
+</Heading>
+
+<Paragraph>
+    FP methods support the same iteratee shorthands as standard Lodash:
+</Paragraph>
+
+<Table>
+    <TableRow>
+        <TableCell>
+            <Mark bold>Shorthand</Mark>
+        </TableCell>
+        <TableCell>
+            <Mark bold>Example</Mark>
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            Property name
+        </TableCell>
+        <TableCell>
+            <Mark>fp.map('name')(users)</Mark>
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            Matches object
+        </TableCell>
+        <TableCell>
+            <Mark>fp.filter({ active: true })(users)</Mark>
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            Matches property
+        </TableCell>
+        <TableCell>
+            <Mark>fp.find(['role', 'admin'])(users)</Mark>
+        </TableCell>
+    </TableRow>
+</Table>
+
+<Heading level="2">
+    Converting Existing Methods
+</Heading>
+
+<Paragraph>
+    You can convert any Lodash method to FP style using the <Mark>.convert()</Mark> method:
+</Paragraph>
+
+<Paragraph>
+    This gives you fine-grained control over how methods are converted.
+</Paragraph>
+
+<Heading level="2">
+    Comparison with Standard Lodash
+</Heading>
+
+<Paragraph>
+    Here's a comparison of standard Lodash vs FP module for common operations:
+</Paragraph>
+
+<Table>
+    <TableRow>
+        <TableCell>
+            <Mark bold>Operation</Mark>
+        </TableCell>
+        <TableCell>
+            <Mark bold>Standard Lodash</Mark>
+        </TableCell>
+        <TableCell>
+            <Mark bold>FP Module</Mark>
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            Map array
+        </TableCell>
+        <TableCell>
+            <Mark>_.map(arr, fn)</Mark>
+        </TableCell>
+        <TableCell>
+            <Mark>fp.map(fn, arr)</Mark>
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            Filter array
+        </TableCell>
+        <TableCell>
+            <Mark>_.filter(arr, pred)</Mark>
+        </TableCell>
+        <TableCell>
+            <Mark>fp.filter(pred, arr)</Mark>
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            Get nested property
+        </TableCell>
+        <TableCell>
+            <Mark>_.get(obj, 'a.b.c')</Mark>
+        </TableCell>
+        <TableCell>
+            <Mark>fp.get('a.b.c', obj)</Mark>
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            Function composition
+        </TableCell>
+        <TableCell>
+            <Mark>_.flow(fn1, fn2)(x)</Mark>
+        </TableCell>
+        <TableCell>
+            <Mark>fp.flow(fn1, fn2)(x)</Mark>
+        </TableCell>
+    </TableRow>
+</Table>
+
+<Callout icon="🎯" blockColor="purple" borderColor="purple">
+    The FP module is perfect for building data processing pipelines, implementing functional programming patterns, and when you need guaranteed immutability.
+</Callout>
+
+<Heading level="2">
+    Tips for Migration
+</Heading>
+
+<Paragraph>
+    If you're migrating from standard Lodash to FP module:
+</Paragraph>
+
+<BulletedList>
+    Remember the argument order: <Mark>iteratee-first, data-last</Mark>
+</BulletedList>
+<BulletedList>
+    FP methods don't mutate data - use the returned value
+</BulletedList>
+<BulletedList>
+    Take advantage of auto-currying for partial application
+</BulletedList>
+<BulletedList>
+    Use <Mark>fp.__</Mark> placeholders for flexible argument ordering
+</BulletedList>
+<BulletedList>
+    Consider using <Mark>fp.flow</Mark> for composing multiple operations
+</BulletedList>
