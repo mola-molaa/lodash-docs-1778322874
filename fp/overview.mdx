@@ -1,0 +1,281 @@
+---
+title: FP Module Overview
+icon: ⚛️
+---
+
+<Heading level="1">
+    FP Module Overview
+</Heading>
+
+<Paragraph>
+    The <Mark bold>lodash/fp</Mark> module provides an immutable, auto-curried, iteratee-first, data-last version of Lodash. It's designed for functional programming patterns.
+</Paragraph>
+
+<Heading level="2">
+    Key Differences from Standard Lodash
+</Heading>
+
+<Table>
+    <TableRow>
+        <TableCell>
+            <Mark bold>Feature</Mark>
+        </TableCell>
+        <TableCell>
+            <Mark bold>Standard Lodash</Mark>
+        </TableCell>
+        <TableCell>
+            <Mark bold>FP Module</Mark>
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            Immutability
+        </TableCell>
+        <TableCell>
+            Some methods mutate data
+        </TableCell>
+        <TableCell>
+            All methods are immutable
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            Currying
+        </TableCell>
+        <TableCell>
+            Manual currying needed
+        </TableCell>
+        <TableCell>
+            Auto-curried functions
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            Argument Order
+        </TableCell>
+        <TableCell>
+            Data-first, iteratee-last
+        </TableCell>
+        <TableCell>
+            Iteratee-first, data-last
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            Placeholder
+        </TableCell>
+        <TableCell>
+            Not available
+        </TableCell>
+        <TableCell>
+            fp.__ placeholder support
+        </TableCell>
+    </TableRow>
+</Table>
+
+<Heading level="2">
+    Argument Reordering
+</Heading>
+
+<Paragraph>
+    The FP module reorders arguments to support currying. The general pattern is <Mark>iteratee-first, data-last</Mark>:
+</Paragraph>
+
+<Table>
+    <TableRow>
+        <TableCell>
+            <Mark bold>Method</Mark>
+        </TableCell>
+        <TableCell>
+            <Mark bold>Standard</Mark>
+        </TableCell>
+        <TableCell>
+            <Mark bold>FP Version</Mark>
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            map
+        </TableCell>
+        <TableCell>
+            _.map(collection, iteratee)
+        </TableCell>
+        <TableCell>
+            fp.map(iteratee, collection)
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            filter
+        </TableCell>
+        <TableCell>
+            _.filter(collection, predicate)
+        </TableCell>
+        <TableCell>
+            fp.filter(predicate, collection)
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            reduce
+        </TableCell>
+        <TableCell>
+            _.reduce(collection, iteratee, accumulator)
+        </TableCell>
+        <TableCell>
+            fp.reduce(iteratee, accumulator, collection)
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            get
+        </TableCell>
+        <TableCell>
+            _.get(object, path, defaultValue)
+        </TableCell>
+        <TableCell>
+            fp.get(path, defaultValue, object)
+        </TableCell>
+    </TableRow>
+</Table>
+
+<Heading level="2">
+    Auto-Currying
+</Heading>
+
+<Paragraph>
+    FP methods are auto-curried, meaning you can call them with fewer arguments than expected, and they return a new function expecting the remaining arguments:
+</Paragraph>
+
+<Paragraph>
+    You can also use <Mark>fp.__</Mark> as a placeholder for arguments you want to specify later:
+</Paragraph>
+
+<Heading level="2">
+    Immutability
+</Heading>
+
+<Paragraph>
+    FP methods never mutate the original data. Instead, they always return new data structures:
+</Paragraph>
+
+<BulletedList>
+    <Mark>fp.set</Mark>, <Mark>fp.update</Mark>, <Mark>fp.unset</Mark> - return new objects
+</BulletedList>
+<BulletedList>
+    <Mark>fp.pull</Mark>, <Mark>fp.remove</Mark> - return new arrays
+</BulletedList>
+<BulletedList>
+    <Mark>fp.assign</Mark>, <Mark>fp.merge</Mark> - return new objects
+</BulletedList>
+
+<Heading level="2">
+    Aliases
+</Heading>
+
+<Paragraph>
+    The FP module includes aliases for common functional programming patterns from libraries like Ramda:
+</Paragraph>
+
+<Table>
+    <TableRow>
+        <TableCell>
+            <Mark bold>FP Alias</Mark>
+        </TableCell>
+        <TableCell>
+            <Mark bold>Lodash Method</Mark>
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            fp.pipe
+        </TableCell>
+        <TableCell>
+            fp.flow
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            fp.compose
+        </TableCell>
+        <TableCell>
+            fp.flowRight
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            fp.prop
+        </TableCell>
+        <TableCell>
+            fp.get
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            fp.assoc
+        </TableCell>
+        <TableCell>
+            fp.set
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            fp.dissoc
+        </TableCell>
+        <TableCell>
+            fp.unset
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            fp.all
+        </TableCell>
+        <TableCell>
+            fp.every
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            fp.any
+        </TableCell>
+        <TableCell>
+            fp.some
+        </TableCell>
+    </TableRow>
+</Table>
+
+<Heading level="2">
+    Conversion Options
+</Heading>
+
+<Paragraph>
+    You can convert Lodash methods to FP-style with custom options using <Mark>method.convert()</Mark>:
+</Paragraph>
+
+<Paragraph>
+    Available options:
+</Paragraph>
+
+<BulletedList>
+    <Mark>cap</Mark> - Cap iteratee arguments (default: true)
+</BulletedList>
+<BulletedList>
+    <Mark>curry</Mark> - Enable/disable currying (default: true)
+</BulletedList>
+<BulletedList>
+    <Mark>fixed</Mark> - Fix arity (default: true)
+</BulletedList>
+<BulletedList>
+    <Mark>immutable</Mark> - Enable/disable immutability (default: true)
+</BulletedList>
+<BulletedList>
+    <Mark>rearg</Mark> - Enable/disable argument reordering (default: true)
+</BulletedList>
+
+<Callout icon="⚛️" blockColor="purple" borderColor="purple">
+    The FP module is ideal for functional programming patterns, data transformation pipelines, and when you need guaranteed immutability.
+</Callout>
+
+<Paragraph>
+    Learn more about using the FP module in <Link href="fp/usage">FP Usage Guide</Link>.
+</Paragraph>
