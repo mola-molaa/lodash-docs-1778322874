@@ -1,0 +1,153 @@
+---
+title: Installation
+icon: 📦
+---
+
+<Heading level="1">
+    Installation
+</Heading>
+
+<Paragraph>
+    Lodash can be installed via npm, used in browsers via script tags, or loaded from CDN. Choose the method that fits your project setup.
+</Paragraph>
+
+<Heading level="2">
+    Node.js / npm
+</Heading>
+
+<Paragraph>
+    Install Lodash using npm:
+</Paragraph>
+
+<Paragraph>
+    This will install the latest version of Lodash. The package is available on npm as <Mark bold>lodash</Mark>.
+</Paragraph>
+
+<Heading level="2">
+    Browser Usage
+</Heading>
+
+<Paragraph>
+    Include Lodash directly in your HTML using a script tag:
+</Paragraph>
+
+<Paragraph>
+    You can also use a CDN for faster delivery:
+</Paragraph>
+
+<BulletedList>
+    <Link href="https://www.jsdelivr.com/projects/lodash">jsDelivr CDN</Link>
+</BulletedList>
+<BulletedList>
+    <Link href="https://raw.githubusercontent.com/lodash/lodash/4.18.1/dist/lodash.js">GitHub Raw</Link>
+</BulletedList>
+
+<Heading level="2">
+    Build Options
+</Heading>
+
+<Paragraph>
+    Lodash provides different builds for various use cases:
+</Paragraph>
+
+<Table>
+    <TableRow>
+        <TableCell>
+            <Mark bold>Build</Mark>
+        </TableCell>
+        <TableCell>
+            <Mark bold>Description</Mark>
+        </TableCell>
+        <TableCell>
+            <Mark bold>Size (gzipped)</Mark>
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            Core build
+        </TableCell>
+        <TableCell>
+            Essential methods only
+        </TableCell>
+        <TableCell>
+            ~4 kB
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            Full build
+        </TableCell>
+        <TableCell>
+            All Lodash methods
+        </TableCell>
+        <TableCell>
+            ~24 kB
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            FP build
+        </TableCell>
+        <TableCell>
+            Functional programming version
+        </TableCell>
+        <TableCell>
+            Varies by import
+        </TableCell>
+    </TableRow>
+</Table>
+
+<Heading level="2">
+    Module Formats
+</Heading>
+
+<Paragraph>
+    Lodash supports multiple module formats to fit your build system:
+</Paragraph>
+
+<BulletedList>
+    <Mark bold>CommonJS:</Mark> <Mark>require('lodash')</Mark> - Node.js style
+</BulletedList>
+<BulletedList>
+    <Mark bold>ES Modules:</Mark> <Mark>import _ from 'lodash-es'</Mark> - Modern JavaScript
+</BulletedList>
+<BulletedList>
+    <Mark bold>UMD:</Mark> Works in browser, Node.js, and AMD
+</BulletedList>
+<BulletedList>
+    <Mark bold>AMD:</Mark> <Mark>require(['lodash-amd'], function(_) { ... })</Mark>
+</BulletedList>
+
+<Heading level="2">
+    Build Tools Integration
+</Heading>
+
+<Paragraph>
+    Lodash works well with popular build tools:
+</Paragraph>
+
+<BulletedList>
+    <Mark bold>Webpack:</Mark> Use <Mark>lodash-webpack-plugin</Mark> for smaller bundles
+</BulletedList>
+<BulletedList>
+    <Mark bold>Rollup:</Mark> Cherry-pick methods for tree-shaking
+</BulletedList>
+<BulletedList>
+    <Mark bold>Babel:</Mark> Use <Mark>babel-plugin-lodash</Mark> to automate imports
+</BulletedList>
+
+<Callout icon="✅" blockColor="green" borderColor="green">
+    For modern projects, consider using the ES modules build (<Mark>lodash-es</Mark>) for better tree-shaking support.
+</Callout>
+
+<Heading level="2">
+    Verifying Installation
+</Heading>
+
+<Paragraph>
+    After installation, verify Lodash is working correctly:
+</Paragraph>
+
+<Paragraph>
+    You should see the Lodash version number printed to the console.
+</Paragraph>
