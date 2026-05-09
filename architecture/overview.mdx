@@ -1,0 +1,247 @@
+---
+title: Architecture Overview
+icon: 🏗️
+---
+
+<Heading level="1">
+    Architecture Overview
+</Heading>
+
+<Paragraph>
+    Lodash is designed with modularity and performance in mind. This page explains the high-level architecture of the library.
+</Paragraph>
+
+<Heading level="2">
+    Core Design Principles
+</Heading>
+
+<BulletedList>
+    <Mark bold>Modularity:</Mark> Each method is available as a separate module
+</BulletedList>
+<BulletedList>
+    <Mark bold>Performance:</Mark> Optimized for modern JavaScript engines
+</BulletedList>
+<BulletedList>
+    <Mark bold>Consistency:</Mark> Predictable behavior across environments
+</BulletedList>
+<BulletedList>
+    <Mark bold>Flexibility:</Mark> Multiple build formats and module systems
+</BulletedList>
+
+<Heading level="2">
+    Module Structure
+</Heading>
+
+<Paragraph>
+    Lodash organizes its methods into logical categories:
+</Paragraph>
+
+<Table>
+    <TableRow>
+        <TableCell>
+            <Mark bold>Category</Mark>
+        </TableCell>
+        <TableCell>
+            <Mark bold>Description</Mark>
+        </TableCell>
+        <TableCell>
+            <Mark bold>Example Methods</Mark>
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            Array
+        </TableCell>
+        <TableCell>
+            Array manipulation and iteration
+        </TableCell>
+        <TableCell>
+            map, filter, reduce, chunk
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            Collection
+        </TableCell>
+        <TableCell>
+            Methods for arrays and objects
+        </TableCell>
+        <TableCell>
+            each, find, includes, size
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            Date
+        </TableCell>
+        <TableCell>
+            Date manipulation
+        </TableCell>
+        <TableCell>
+            now, parse
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            Function
+        </TableCell>
+        <TableCell>
+            Function utilities
+        </TableCell>
+        <TableCell>
+            curry, debounce, throttle, flow
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            Lang
+        </TableCell>
+        <TableCell>
+            Type checking and cloning
+        </TableCell>
+        <TableCell>
+            clone, isArray, isObject, isEqual
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            Math
+        </TableCell>
+        <TableCell>
+            Mathematical operations
+        </TableCell>
+        <TableCell>
+            add, subtract, multiply, divide
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            Object
+        </TableCell>
+        <TableCell>
+            Object manipulation
+        </TableCell>
+        <TableCell>
+            assign, get, set, keys, values
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            String
+        </TableCell>
+        <TableCell>
+            String manipulation
+        </TableCell>
+        <TableCell>
+            camelCase, capitalize, trim, split
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            Util
+        </TableCell>
+        <TableCell>
+            Utility functions
+        </TableCell>
+        <TableCell>
+            identity, constant, noop
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            Seq
+        </TableCell>
+        <TableCell>
+            Chainable sequence methods
+        </TableCell>
+        <TableCell>
+            chain, value, tap
+        </TableCell>
+    </TableRow>
+</Table>
+
+<Heading level="2">
+    Build System
+</Heading>
+
+<Paragraph>
+    Lodash uses a custom build system to generate different output formats:
+</Paragraph>
+
+<BulletedList>
+    Main build system in <Mark>lib/main/</Mark> - handles core Lodash builds
+</BulletedList>
+<BulletedList>
+    FP build system in <Mark>lib/fp/</Mark> - handles functional programming builds
+</BulletedList>
+<BulletedList>
+    Common utilities in <Mark>lib/common/</Mark> - shared build tools
+</BulletedList>
+
+<Heading level="2">
+    FP Module Architecture
+</Heading>
+
+<Paragraph>
+    The FP module provides an immutable, auto-curried, iteratee-first, data-last version of Lodash:
+</Paragraph>
+
+<BulletedList>
+    <Mark bold>Immutable:</Mark> Methods don't mutate original data
+</BulletedList>
+<BulletedList>
+    <Mark bold>Auto-curried:</Mark> Functions can be partially applied
+</BulletedList>
+<BulletedList>
+    <Mark bold>Argument reordering:</Mark> Iteratee-first, data-last pattern
+</BulletedList>
+<BulletedList>
+    <Mark bold>Placeholder support:</Mark> Use <Mark>fp.__</Mark> for argument placeholders
+</BulletedList>
+
+<Heading level="2">
+    Governance Structure
+</Heading>
+
+<Paragraph>
+    Lodash is governed by the OpenJS Foundation with the following teams:
+</Paragraph>
+
+<Table>
+    <TableRow>
+        <TableCell>
+            <Mark bold>Team</Mark>
+        </TableCell>
+        <TableCell>
+            <Mark bold>Responsibility</Mark>
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            Technical Steering Committee (TSC)
+        </TableCell>
+        <TableCell>
+            Overall project direction and decisions
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            Security Triage Team
+        </TableCell>
+        <TableCell>
+            Vulnerability assessment and management
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            Release Team
+        </TableCell>
+        <TableCell>
+            Publishing new versions to npm
+        </TableCell>
+    </TableRow>
+</Table>
+
+<Callout icon="ℹ️" blockColor="blue" borderColor="blue">
+    Lodash is transitioning to the Feature-Complete maturity stage with support from the Sovereign Tech Agency to ensure long-term stability and security.
+</Callout>
