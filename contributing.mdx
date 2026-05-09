@@ -1,0 +1,150 @@
+---
+title: Contributing
+icon: 🤝
+---
+
+<Heading level="1">
+    Contributing to Lodash
+</Heading>
+
+<Paragraph>
+    Contributions are always welcome! Before contributing please read the <Link href="https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md">code of conduct</Link> and search the <Link href="https://github.com/lodash/lodash/issues">issue tracker</Link> to avoid duplicates.
+</Paragraph>
+
+<Heading level="2">
+    How to Contribute
+</Heading>
+
+<Paragraph>
+    To contribute:
+</Paragraph>
+
+<BulletedList>
+    <Link href="https://help.github.com/articles/fork-a-repo/">Fork</Link> Lodash
+</BulletedList>
+<BulletedList>
+    Commit your changes
+</BulletedList>
+<BulletedList>
+    <Link href="https://help.github.com/articles/using-pull-requests/">Send a pull request</Link>
+</BulletedList>
+
+<Heading level="2">
+    Feature Requests
+</Heading>
+
+<Paragraph>
+    Feature requests should be submitted in the <Link href="https://github.com/lodash/lodash/issues">issue tracker</Link> with a description of the expected behavior & use case.
+</Paragraph>
+
+<Paragraph>
+    They'll remain closed until sufficient interest (e.g., <Mark bold>:+1: reactions</Mark>) has been shown by the community.
+</Paragraph>
+
+<Paragraph>
+    Before submitting a request, please search for similar ones in the <Link href="https://github.com/lodash/lodash/issues?q=label%3A%22votes+needed%22+sort%3Areactions-%2B1-desc">closed issues</Link>.
+</Paragraph>
+
+<Heading level="2">
+    Pull Requests
+</Heading>
+
+<Paragraph>
+    For additions or bug fixes you should only need to modify <Mark bold>lodash.js</Mark>. Include updated unit tests in the <Mark bold>test</Mark> directory as part of your pull request.
+</Paragraph>
+
+<Paragraph>
+    Don't worry about regenerating the <Mark bold>dist/</Mark> or <Mark bold>doc/</Mark> files.
+</Paragraph>
+
+<Heading level="3">
+    Running Tests
+</Heading>
+
+<Paragraph>
+    Before running the unit tests you'll need to install <Mark bold>development dependencies</Mark>:
+</Paragraph>
+
+<Paragraph>
+    Run unit tests from the command-line via:
+</Paragraph>
+
+<Paragraph>
+    Or open <Mark>test/index.html</Mark> & <Mark>test/fp.html</Mark> in a web browser. The <Link href="http://backbonejs.org/">Backbone</Link> and <Link href="http://underscorejs.org/">Underscore</Link> test suites are included as well.
+</Paragraph>
+
+<Heading level="2">
+    Contributor License Agreement
+</Heading>
+
+<Paragraph>
+    Lodash is a member of the <Link href="https://openjsf.org/">OpenJS Foundation</Link>. As such, we request that all contributors sign our <Link href="https://openjsf.org/cla">contributor license agreement (CLA)</Link>.
+</Paragraph>
+
+<Paragraph>
+    For more information about CLAs, please check out Alex Russell's excellent post, <Link href="https://infrequently.org/2008/06/why-do-i-need-to-sign-this/">"Why Do I Need to Sign This?"</Link>.
+</Paragraph>
+
+<Heading level="2">
+    Coding Guidelines
+</Heading>
+
+<Paragraph>
+    In addition to the following guidelines, please follow the conventions already established in the code.
+</Paragraph>
+
+<Heading level="3">
+    Spacing
+</Heading>
+
+<Paragraph>
+    Use <Mark bold>two spaces</Mark> for indentation. No tabs.
+</Paragraph>
+
+<Heading level="3">
+    Naming
+</Heading>
+
+<Paragraph>
+    Keep variable & method names concise & descriptive. Variable names <Mark>index</Mark>, <Mark>array</Mark>, & <Mark>iteratee</Mark> are preferable to <Mark>i</Mark>, <Mark>arr</Mark>, & <Mark>fn</Mark>.
+</Paragraph>
+
+<Heading level="3">
+    Quotes
+</Heading>
+
+<Paragraph>
+    <Mark bold>Single-quoted</Mark> strings are preferred to double-quoted strings; however, please use a double-quoted string if the value contains a single-quote character to avoid unnecessary escaping.
+</Paragraph>
+
+<Heading level="3">
+    Comments
+</Heading>
+
+<Paragraph>
+    Please use single-line comments to annotate significant additions, & <Link href="http://www.2ality.com/2011/08/jsdoc-intro.html">JSDoc-style</Link> comments for functions.
+</Paragraph>
+
+<Heading level="3">
+    Style Checking
+</Heading>
+
+<Paragraph>
+    Guidelines are enforced using <Link href="https://www.npmjs.com/package/jscs">JSCS</Link>:
+</Paragraph>
+
+<Heading level="2">
+    Tips
+</Heading>
+
+<Paragraph>
+    You can opt-in to a pre-push git hook by adding an <Mark>.opt-in</Mark> file to the root of the project containing:
+</Paragraph>
+
+<Paragraph>
+    With that, when you <Mark>git push</Mark>, the pre-push git hook will trigger and execute <Mark>npm run validate</Mark>.
+</Paragraph>
+
+<Callout icon="🤝" blockColor="blue" borderColor="blue">
+    Thank you for contributing to Lodash! Your efforts help make JavaScript easier for everyone.
+</Callout>
