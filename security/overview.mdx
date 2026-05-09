@@ -1,0 +1,199 @@
+---
+title: Security Overview
+icon: 🔒
+---
+
+<Heading level="1">
+    Security Overview
+</Heading>
+
+<Paragraph>
+    Security is a top priority for Lodash. This page outlines the Lodash threat model and security practices.
+</Paragraph>
+
+<Heading level="2">
+    Supported Versions
+</Heading>
+
+<Table>
+    <TableRow>
+        <TableCell>
+            <Mark bold>Version</Mark>
+        </TableCell>
+        <TableCell>
+            <Mark bold>Supported</Mark>
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            4.x
+        </TableCell>
+        <TableCell>
+            ✓ Supported
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            3.x
+        </TableCell>
+        <TableCell>
+            ✗ Not supported
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            2.x
+        </TableCell>
+        <TableCell>
+            ✗ Not supported
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            1.x
+        </TableCell>
+        <TableCell>
+            ✗ Not supported
+        </TableCell>
+    </TableRow>
+</Table>
+
+<Heading level="2">
+    Threat Model
+</Heading>
+
+<Paragraph>
+    The Lodash threat model defines what Lodash trusts and does not trust when executing within a JavaScript environment.
+</Paragraph>
+
+<Heading level="3">
+    Elements Lodash Does NOT Trust
+</Heading>
+
+<BulletedList>
+    <Mark bold>Data provided to Lodash functions</Mark> - All input data is treated as untrusted
+</BulletedList>
+<BulletedList>
+    <Mark bold>Untrusted network sources or user-controlled data</Mark> - No input isolation or sandboxing
+</BulletedList>
+<BulletedList>
+    <Mark bold>Tampering with Lodash internals at runtime</Mark> - Outside the trusted boundary
+</BulletedList>
+
+<Heading level="3">
+    Elements Lodash Trusts
+</Heading>
+
+<BulletedList>
+    <Mark bold>The JavaScript runtime and its standard library</Mark>
+</BulletedList>
+<BulletedList>
+    <Mark bold>The environment and its configuration</Mark>
+</BulletedList>
+<BulletedList>
+    <Mark bold>The code that invokes Lodash</Mark> - Responsible for input validation
+</BulletedList>
+<BulletedList>
+    <Mark bold>Installed package integrity</Mark> - Assumes legitimate distribution
+</BulletedList>
+<BulletedList>
+    <Mark bold>The privileges and permissions of the execution context</Mark>
+</BulletedList>
+
+<Heading level="2">
+    In-Scope Vulnerabilities
+</Heading>
+
+<Paragraph>
+    The following types of vulnerabilities are considered within scope:
+</Paragraph>
+
+<BulletedList>
+    <Mark bold>Prototype Pollution (CVE-2019-10744)</Mark> - If a Lodash function allows modification of Object.prototype properties via untrusted input
+</BulletedList>
+<BulletedList>
+    <Mark bold>Unexpected code execution (CVE-2021-23337)</Mark> - If a Lodash method executes attacker-controlled input as code
+</BulletedList>
+<BulletedList>
+    <Mark bold>Denial of Service (CVE-2020-28500)</Mark> - If Lodash enters unbounded recursion or excessive memory usage with valid inputs
+</BulletedList>
+
+<Heading level="2">
+    Out-of-Scope Issues
+</Heading>
+
+<Paragraph>
+    The following are NOT considered Lodash vulnerabilities:
+</Paragraph>
+
+<BulletedList>
+    <Mark bold>Malicious Third-Party Packages</Mark> - Supply chain compromise
+</BulletedList>
+<BulletedList>
+    <Mark bold>Unvalidated Application Input</Mark> - Application bug, not Lodash defect
+</BulletedList>
+<BulletedList>
+    <Mark bold>Prototype Pollution via Trusted Code</Mark> - Developer misuse
+</BulletedList>
+<BulletedList>
+    <Mark bold>Stateful or Accessor-Backed Path Arguments</Mark> - Requires code in the process
+</BulletedList>
+<BulletedList>
+    <Mark bold>Inherent JavaScript Prototype Behavior</Mark> - Language semantics
+</BulletedList>
+<BulletedList>
+    <Mark bold>Vulnerability Chaining and Gadgets</Mark> - Root cause is in downstream code
+</BulletedList>
+<BulletedList>
+    <Mark bold>Vulnerabilities in the JavaScript Runtime</Mark> - Engine bugs
+</BulletedList>
+<BulletedList>
+    <Mark bold>Environmental Misconfiguration</Mark> - CSP, outdated Node.js, etc.
+</BulletedList>
+<BulletedList>
+    <Mark bold>Supply Chain Compromise</Mark> - npm registry tampering, MITM attacks
+</BulletedList>
+
+<Heading level="2">
+    Security Notice: _.template
+</Heading>
+
+<Callout icon="⚠️" blockColor="red" borderColor="red">
+    The current implementation of <Mark>_.template</Mark> compiles template strings into executable code, which can lead to code injection when given untrusted input (CVE-2021-23337). We consider it insecure and advise against its use.
+</Callout>
+
+<Paragraph>
+    We plan to remove <Mark>_.template</Mark> in Lodash v5. Until then it remains available. If you continue to use it, we recommend:
+</Paragraph>
+
+<BulletedList>
+    Using only developer-controlled, static template strings
+</BulletedList>
+<BulletedList>
+    Using trusted data only
+</BulletedList>
+<BulletedList>
+    Avoiding untrusted input in both the template string and the data passed to the compiled function
+</BulletedList>
+
+<Heading level="2">
+    Security Resources
+</Heading>
+
+<Paragraph>
+    For more information:
+</Paragraph>
+
+<BulletedList>
+    <Link href="https://github.com/lodash/lodash/security">Security tab on GitHub</Link>
+</BulletedList>
+<BulletedList>
+    <Link href="security/reporting">How to report security issues</Link>
+</BulletedList>
+<BulletedList>
+    Review the full <Link href="https://github.com/lodash/lodash/blob/master/threat-model.md">Threat Model</Link>
+</BulletedList>
+
+<Callout icon="🔒" blockColor="green" borderColor="green">
+    Lodash is a utility library operating entirely within the trust boundary of its caller. Vulnerabilities in scope are limited to cases where Lodash fails to uphold its documented behavior in the presence of untrusted input.
+</Callout>
