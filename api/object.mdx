@@ -1,0 +1,196 @@
+---
+title: Object Methods
+icon: 🗂️
+---
+
+<Heading level="1">
+    Object Methods
+</Heading>
+
+<Paragraph>
+    Lodash provides powerful methods for working with JavaScript objects. These methods simplify common object operations and handle edge cases.
+</Paragraph>
+
+<Heading level="2">
+    Property Access
+</Heading>
+
+<Paragraph>
+    <Mark bold>_.get</Mark> - Gets the value at a given path of an object, with optional default value:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.set</Mark> - Sets the value at a given path of an object. Creates intermediate objects if needed:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.has</Mark> - Checks if a given path exists in an object:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.unset</Mark> - Removes the property at a given path of an object:
+</Paragraph>
+
+<Heading level="2">
+    Object Composition
+</Heading>
+
+<Paragraph>
+    <Mark bold>_.assign</Mark> - Assigns own enumerable string keyed properties from source objects to the destination object:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.defaults</Mark> - Assigns own enumerable string keyed properties of source objects to the destination object for all destination properties that resolve to undefined:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.merge</Mark> - Similar to <Mark>_.assign</Mark> but recursively merges own and inherited enumerable string keyed properties of source objects:
+</Paragraph>
+
+<Heading level="2">
+    Object Inspection
+</Heading>
+
+<Paragraph>
+    <Mark bold>_.keys</Mark> - Creates an array of the own enumerable property names of an object:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.values</Mark> - Creates an array of the own enumerable string keyed property values of an object:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.entries (_.toPairs)</Mark> - Creates an array of own enumerable string keyed entries of an object:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.pick</Mark> - Creates an object composed of the picked object properties:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.omit</Mark> - The opposite of <Mark>_.pick</Mark>; creates an object composed of properties not omitted:
+</Paragraph>
+
+<Heading level="2">
+    Type Checking
+</Heading>
+
+<Paragraph>
+    Lodash provides comprehensive type checking methods:
+</Paragraph>
+
+<Table>
+    <TableRow>
+        <TableCell>
+            <Mark bold>Method</Mark>
+        </TableCell>
+        <TableCell>
+            <Mark bold>Checks For</Mark>
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            _.isArray
+        </TableCell>
+        <TableCell>
+            Array type
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            _.isObject
+        </TableCell>
+        <TableCell>
+            Object type (not null)
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            _.isFunction
+        </TableCell>
+        <TableCell>
+            Function type
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            _.isString
+        </TableCell>
+        <TableCell>
+            String type
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            _.isNumber
+        </TableCell>
+        <TableCell>
+            Number type
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            _.isEqual
+        </TableCell>
+        <TableCell>
+            Deep equality check
+        </TableCell>
+    </TableRow>
+</Table>
+
+<Heading level="2">
+    Cloning
+</Heading>
+
+<Paragraph>
+    <Mark bold>_.clone</Mark> - Creates a shallow clone of a value:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.cloneDeep</Mark> - Creates a deep clone of a value:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.cloneWith</Mark> - Similar to <Mark>_.clone</Mark> but accepts a customizer function:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>_.cloneDeepWith</Mark> - Similar to <Mark>_.cloneDeep</Mark> but accepts a customizer function:
+</Paragraph>
+
+<Heading level="2">
+    FP Module Object Methods
+</Heading>
+
+<Paragraph>
+    In the FP module, object methods use immutable operations and reordered arguments:
+</Paragraph>
+
+<BulletedList>
+    <Mark>fp.get</Mark> - Arguments: <Mark>(path, object)</Mark> - iteratee-first, data-last
+</BulletedList>
+<BulletedList>
+    <Mark>fp.set</Mark> - Arguments: <Mark>(path, value, object)</Mark> - does not mutate original
+</BulletedList>
+<BulletedList>
+    <Mark>fp.pick</Mark> - Arguments: <Mark>(paths, object)</Mark>
+</BulletedList>
+<BulletedList>
+    <Mark>fp.omit</Mark> - Arguments: <Mark>(paths, object)</Mark>
+</BulletedList>
+
+<Callout icon="⚠️" blockColor="yellow" borderColor="light_orange">
+    Methods like <Mark>fp.set</Mark>, <Mark>fp.update</Mark>, and <Mark>fp.unset</Mark> in the FP module always return a new object without modifying the original.
+</Callout>
+
+<Heading level="2">
+    Security Considerations
+</Heading>
+
+<Paragraph>
+    When using methods like <Mark>_.merge</Mark>, <Mark>_.defaultsDeep</Mark>, or <Mark>_.set</Mark> with untrusted input, be aware of prototype pollution risks. Lodash blocks writes to built-in prototypes, but proper input validation is still recommended.
+</Paragraph>
+
+<Paragraph>
+    Learn more in our <Link href="security/overview">Security Documentation</Link>.
+</Paragraph>
