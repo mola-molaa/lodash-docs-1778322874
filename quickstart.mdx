@@ -1,0 +1,120 @@
+---
+title: Quickstart
+icon: 🚀
+---
+
+<Heading level="1">
+    Quickstart
+</Heading>
+
+<Paragraph>
+    Get up and running with Lodash in minutes. This guide covers the basics of using Lodash in your project.
+</Paragraph>
+
+<Heading level="2">
+    Basic Usage in Node.js
+</Heading>
+
+<Paragraph>
+    After installing Lodash, you can import and use it in your JavaScript files:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>Load the full build:</Mark>
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>Load the core build:</Mark>
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>Load the FP build:</Mark>
+</Paragraph>
+
+<Heading level="2">
+    Browser Usage
+</Heading>
+
+<Paragraph>
+    Include Lodash directly in your HTML:
+</Paragraph>
+
+<Paragraph>
+    <Mark bold>Using a CDN:</Mark>
+</Paragraph>
+
+<Heading level="2">
+    Cherry-picking Methods
+</Heading>
+
+<Paragraph>
+    For smaller browserify/rollup/webpack bundles, you can import individual methods:
+</Paragraph>
+
+<Table>
+    <TableRow>
+        <TableCell>
+            <Mark bold>Import Type</Mark>
+        </TableCell>
+        <TableCell>
+            <Mark bold>Example</Mark>
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            Single method
+        </TableCell>
+        <TableCell>
+            <Mark>const at = require('lodash/at')</Mark>
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            FP method
+        </TableCell>
+        <TableCell>
+            <Mark>const curryN = require('lodash/fp/curryN')</Mark>
+        </TableCell>
+    </TableRow>
+    <TableRow>
+        <TableCell>
+            Category
+        </TableCell>
+        <TableCell>
+            <Mark>const array = require('lodash/array')</Mark>
+        </TableCell>
+    </TableRow>
+</Table>
+
+<Heading level="2">
+    Common Examples
+</Heading>
+
+<Paragraph>
+    Here are some common use cases to get you started:
+</Paragraph>
+
+<BulletedList>
+    <Mark bold>Array operations:</Mark> <Mark>_.map([1, 2, 3], n => n * 2)</Mark> returns <Mark>[2, 4, 6]</Mark>
+</BulletedList>
+<BulletedList>
+    <Mark bold>Object operations:</Mark> <Mark>_.get(obj, 'nested.property', 'default')</Mark>
+</BulletedList>
+<BulletedList>
+    <Mark bold>Collection filtering:</Mark> <Mark>_.filter(users, { 'active': true })</Mark>
+</BulletedList>
+<BulletedList>
+    <Mark bold>Function composition:</Mark> <Mark>_.flow(_.add(1), _.multiply(2))(5)</Mark> returns <Mark>12</Mark>
+</BulletedList>
+
+<Callout icon="💡" blockColor="yellow" borderColor="light_orange">
+    Lodash methods are chainable. Use <Mark>_.chain()</Mark> to enable explicit chaining or use implicit chaining with methods that return wrapped values.
+</Callout>
+
+<Heading level="2">
+    Next Steps
+</Heading>
+
+<Paragraph>
+    Now that you have Lodash set up, explore the <Link href="api/array">API Reference</Link> to learn about specific methods, or check out the <Link href="fp/overview">FP Module</Link> for functional programming patterns.
+</Paragraph>
